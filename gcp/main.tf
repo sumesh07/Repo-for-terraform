@@ -1,6 +1,6 @@
 resource "google_storage_bucket" "my_bucket" {
-  name     = var.bucket_name
-  location = var.region
+  bucket = "sumesh-gcs-bucket"
+  region = "us-central1"
 }
 
 terraform {
