@@ -1,10 +1,15 @@
 resource "google_storage_bucket" "my_bucket" {
-  bucket = "sumesh-gcs-bucket"
-  region = "us-central1"
+  name = var.bucket
+  location = "us-central1"
 }
 
 terraform {
   backend "gcs" {
-    path = "statefile/terraform.tfstate"
+    bucket = "sumesh-gcs-bucket"
+    prefix = "statefile/terraform.tfstate"
   }
+}
+
+variable "bucket" {
+  description = "name of bucket"
 }
