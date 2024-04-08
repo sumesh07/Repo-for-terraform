@@ -4,7 +4,7 @@ resource "google_storage_bucket" "my_bucket" {
 }
 
 terraform {
-  backend "local" {
+  backend "gcs" {
     path = "statefile/terraform.tfstate"
   }
 }
